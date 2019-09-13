@@ -1,0 +1,121 @@
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+          <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,800"
+      rel="stylesheet"
+    />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="static/css/main.css" rel="stylesheet" />
+    <title>
+        Wikipedia - {{title}}
+    </title>
+
+    </head>
+    <body>
+        <div class="alert alert-info" role="alert">
+      <T></T>This information is scraped from <a href="https://en.wikipedia.org/wiki/{{title}}" class="alert-link">Wikipedia</a>.
+        </div>
+    <div class="">
+        <div class="row">
+      <div class="col-3">
+          <div class="text-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/263px-Wikipedia-logo-v2.svg.png" class="rounded" alt="...">
+            </div>
+        <h1 style="text-align:center">Mini-Wiki</h1>
+            <h6 style="text-align:center">Wikipedia Scraper</h6>
+
+      </div>
+
+
+
+          <div class="col-8"><p class="h1">{{title}}</p>
+        <hr/>
+        <p> <footer class="blockquote-footer">From Wikipedia,  <cite title="Source Title">the free encyclopedia</cite></footer></p>
+        <p>
+           <img src="http://{{img}}" class="rounded float-left" alt="...">
+            Description: {{final_text}}
+        </p>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <div class="card">
+          <div class="card-header">
+            {{ footer }}
+
+          </div>
+
+        </div>
+        </div>
+        </div>
+
+        </div>
+
+    </body>
+
+    <div class="col">
+      <div class="s128">
+      <form action="/" method="post">
+
+        <div class="inner-form">
+          <div class="row-new">
+            <div class="input-field first" id="first">
+              
+              <input
+                class="input"
+                name="testField"
+                id="inputFocus"
+                type="text"
+                placeholder="What are you looking for?"
+              />
+              <input hidden type="submit" >
+            
+              <button class="clear" id="clear" >
+                
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  ></path>
+                </svg>
+                
+              </button>
+            </div>
+           
+          </div>
+          <!-- <div class="row">
+            <div class="input-field second">
+              <input type="search" placeholder="Keyword" />
+            </div>
+          </div> -->
+        </div>
+      </form>
+    </div>
+    </div>
+    <script>
+      var btnDelete = document.getElementById("clear");
+      var inputFocus = document.getElementById("inputFocus");
+      //- btnDelete.on('click', function(e) {
+      //-   e.preventDefault();
+      //-   inputFocus.classList.add('isFocus')
+      //- })
+      //- inputFocus.addEventListener('click', function() {
+      //-   this.classList.add('isFocus')
+      //- })
+      btnDelete.addEventListener("click", function(e) {
+        e.preventDefault();
+        inputFocus.value = "";
+      });
+      document.addEventListener("mouseover", function(e) {
+        if (document.getElementById("first").contains(e.target)) {
+          inputFocus.classList.add("isFocus");
+        } else {
+          // Clicked outside the box
+          inputFocus.classList.remove("isFocus");
+        }
+      });
+    </script>
+</html>
