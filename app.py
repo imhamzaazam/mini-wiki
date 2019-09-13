@@ -43,11 +43,7 @@ def index(name=""):
     # get first 5 p tags in body
     body_text = body.find_all('p', limit=5)
 
-    print("Title: " + title)
-    print("Description: " + first_sentence(body_text, q.split(" ")[0]))
-    print("Img URL: " + img[2:len(img)])
-    print("Footer: " + footer)
-
+   
     
 
     return render_template("index.html", title=title, final_text=first_sentence(body_text, q.split(" ")[0]), img = img[2:len(img)], footer=footer)
